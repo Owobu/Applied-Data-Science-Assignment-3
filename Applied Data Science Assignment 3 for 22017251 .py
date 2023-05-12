@@ -52,7 +52,12 @@ def cluster(data):
     print(df_co2_2009.describe())
     print(df_gdp_2009.describe())
     
-    
+    df_2009 = pd.merge(df_co2_2009, df_gdp_2009, on="Country Name", how="outer")
+    print(df_2009.describe())
+    df_2009 = df_2009.dropna()
+    df_2009.describe()
+    df_2009 = df_2009.rename(columns={"2009_x":"emission", "2009_y":"gdp"})
+    print(df_2009)
     
     # using scatter matrix 
     pd.plotting.scatter_matrix(df_2009, figsize=(12, 12), s=5, alpha=0.8)
