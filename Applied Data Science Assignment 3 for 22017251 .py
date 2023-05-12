@@ -173,7 +173,12 @@ def fiting(df_gdp):
     plt.plot(df_germany["year"], df_germany["GDP"], label="GDP")
     plt.plot(year, forecast, label="forecast")
     plt.fill_between(year, low, up, color="yellow", alpha=0.7)
-    
+    plt.xlabel("year")
+    plt.ylabel("GDP")
+    plt.legend()
+    plt.savefig('errorband.png', dpi=300)
+    plt.show()
+    print(param)
     
     
     
