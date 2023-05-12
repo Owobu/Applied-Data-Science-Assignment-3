@@ -222,7 +222,10 @@ def germany():
 
     plt.figure(figsize=(8.0, 8.0))
 
-  
+    cm = plt.cm.get_cmap('tab10')
+    plt.scatter(df_germany_cluster["GDP"], df_germany_cluster["emission"], 10, labels, marker="o", cmap=cm)
+    plt.scatter(xcen, ycen, 45, "k", marker="d")
+    plt.xlabel("GDP")
     plt.ylabel("emission")
     plt.title('Germany cluster')
     plt.savefig('germany_cluster.png', dpi=300)
